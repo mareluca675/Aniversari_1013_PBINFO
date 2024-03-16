@@ -1,0 +1,72 @@
+#include <iostream>
+
+using namespace std;
+
+struct elem{
+    int an;
+    int luna;
+    int zi;
+};
+
+int main()
+{
+    elem batran = {2024, 12, 31}, nastere, tanar = {0, 0, 0};
+    int indiceBatran, indiceTanar;
+    int n;
+    //cout << batran.an << ' ' << batran.luna << ' ' << batran.zi << '\n';
+    
+    cin >> n;
+    for(int i = 1; i <= n; ++ i){
+        cin >> nastere.an >> nastere.luna >> nastere.zi;
+        //cout << nastere.an << ' ' << nastere.luna << ' ' << nastere.zi << '\n';
+        
+        if(batran.an > nastere.an){
+            batran.an = nastere.an;
+            batran.luna = nastere.luna;
+            batran.zi = nastere.zi;
+            indiceBatran = i;
+        }
+        else if(batran.an == nastere.an){
+            if(batran.luna > nastere.luna){
+                batran.an = nastere.an;
+                batran.luna = nastere.luna;
+                batran.zi = nastere.zi;
+                indiceBatran = i;
+            }
+            else if(batran.luna == nastere.luna){
+                if(batran.zi > nastere.zi){
+                    batran.an = nastere.an;
+                    batran.luna = nastere.luna;
+                    batran.zi = nastere.zi;
+                    indiceBatran = i;
+                }
+            }
+        }
+        
+        if(tanar.an < nastere.an){
+            tanar.an = nastere.an;
+            tanar.luna = nastere.luna;
+            tanar.zi = nastere.zi;
+            indiceTanar = i;
+        }
+        else if(tanar.an == nastere.an){
+            if(tanar.luna < nastere.luna){
+                tanar.an = nastere.an;
+                tanar.luna = nastere.luna;
+                tanar.zi = nastere.zi;
+                indiceTanar = i;
+            }
+            else if(tanar.luna == nastere.luna){
+                if(tanar.zi < nastere.zi){
+                    tanar.an = nastere.an;
+                    tanar.luna = nastere.luna;
+                    tanar.zi = nastere.zi;
+                    indiceTanar = i;
+                }
+            }
+        }
+    }
+    
+    cout << indiceTanar << ' ' << indiceBatran;
+    return 0;
+}
